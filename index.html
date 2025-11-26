@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capital Market Green</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'brand-cream': '#F4F2EB',
+              'brand-green': '#09e989',
+              'brand-green-hover': '#07cf7b',
+              'brand-dark': '#6B6B6B',
+              'brand-text': '#0F172A',
+              'brand-dark-bg': '#000000',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'spin-slow': 'spin 4s linear infinite',
+              'fade-in': 'fade-in 0.5s ease-out forwards',
+              'scale-in': 'scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+            boxShadow: {
+              'card-hover': '0 25px 50px -12px rgba(0, 0, 0, 0.45)',
+              'deep': '0 10px 30px -5px rgba(0, 0, 0, 0.3)',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes scale-in {
+        from { transform: scale(0.95); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+
+      /* Base state for hidden elements */
+      .reveal-hidden {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96); /* Empieza un poco más abajo y ligeramente más pequeño */
+        will-change: opacity, transform;
+      }
+
+      /* Active state for visible elements */
+      .reveal-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        /* Curva cubic-bezier para un efecto 'pop' suave pero rápido */
+        transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .animate-delay-100 { transition-delay: 100ms; }
+      .animate-delay-200 { transition-delay: 200ms; }
+      .animate-delay-300 { transition-delay: 300ms; }
+      
+      /* Hide Scrollbar but allow scrolling */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
